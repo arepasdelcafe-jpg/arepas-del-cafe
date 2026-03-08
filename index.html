@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arepas del Café</title>
+
+<style>
+body{
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    background:#f7f4f1;
+    color:#333;
+}
+
+header{
+    background:#6b3e26;
+    color:white;
+    padding:25px;
+    text-align:center;
+}
+
+header h1, header p{
+    margin:0;
+}
+
+nav{
+    background:#8b5a3c;
+    display:flex;
+    justify-content:center;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    padding:15px 20px;
+    position:relative;
+    font-weight:bold;
+}
+
+nav a:hover::after,
+nav a.active::after{
+    content:"";
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:4px;
+    background:white;
+    border-radius:2px;
+}
+
+.hero{
+    text-align:center;
+    padding:80px 20px;
+    background:linear-gradient(#e8e0d8,#f7f4f1);
+}
+
+.hero h1{
+    font-size:42px;
+    margin-bottom:10px;
+}
+
+.hero p{
+    font-size:18px;
+}
+
+.btn-menu{
+    display:inline-block;
+    margin-top:25px;
+    padding:15px 35px;
+    background:#6b3e26;
+    color:white;
+    font-size:18px;
+    border-radius:8px;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.btn-menu:hover{
+    background:#8b5a3c;
+}
+
+.container{
+    max-width:1000px;
+    margin:auto;
+    padding:40px 20px;
+}
+
+h2{
+    color:#6b3e26;
+    margin-bottom:20px;
+}
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 3px 10px rgba(0,0,0,0.1);
+}
+
+.card h3{
+    margin-top:0;
+}
+
+.card ul{
+    list-style:none;
+    padding:0;
+}
+
+.card li{
+    margin:8px 0;
+}
+
+.card li::before{
+    content:"✔ ";
+    color:green;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Arepas del Café</h1>
+<p>Las mejores arepas, hamburguesas y comida rápida</p>
+</header>
+
+<nav>
+<a href="index.html" class="active">Inicio</a>
+<a href="#caracteristicas">Características</a>
+<a href="servicios.html">Menú</a>
+<a href="https://wa.me/573152391819">Contacto</a>
+</nav>
+
+<section class="hero">
+<h1>Bienvenido a Arepas del Café</h1>
+<p>Disfruta arepas, hamburguesas, perros calientes y más comida rápida preparada al momento.</p>
+<a class="btn-menu" href="servicios.html">🍔 Ver menú y pedir domicilio</a>
+</section>
+
+<section id="caracteristicas" class="container">
+<h2>Características del local</h2>
+
+<div class="features">
+<div class="card">
+<h3>Opciones de servicio</h3>
+<ul>
+<li>Entrega a domicilio</li>
+<li>Pedidos desde el automóvil</li>
+<li>Para llevar</li>
+<li>Consumo en el lugar</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Popular por</h3>
+<ul>
+<li>Cena</li>
+<li>Cena en solitario</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Qué ofrece</h3>
+<ul>
+<li>Bocadillos</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Opciones del local</h3>
+<ul>
+<li>Cena</li>
+<li>Espacio con asientos</li>
+<li>Servicio a la mesa</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Servicios</h3>
+<ul>
+<li>Sanitario</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Ambiente</h3>
+<ul>
+<li>Informal</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Público usual</h3>
+<ul>
+<li>Grupos</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Pagos</h3>
+<ul>
+<li>Nequi y efectivo</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Menores</h3>
+<ul>
+<li>Ideal para ir con niños</li>
+<li>Sillas altas</li>
+</ul>
+</div>
+</div>
+
+</section>
+</body>
+</html>

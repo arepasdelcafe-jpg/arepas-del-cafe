@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menú | Arepas del Café</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f7f4f1;
+    color:#3b2a20;
+}
+
+header{
+    background:#6b3e26;
+    color:white;
+    padding:25px;
+    text-align:center;
+}
+
+header h1, header p{
+    margin:0;
+}
+
+nav{
+    background:#8b5a3c;
+    display:flex;
+    justify-content:center;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    padding:15px 20px;
+    position:relative;
+    font-weight:bold;
+}
+
+nav a:hover::after,
+nav a.active::after{
+    content:"";
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:4px;
+    background:white;
+    border-radius:2px;
+}
+
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:20px;
+}
+
+h2{
+    color:#6b3e26;
+    margin-bottom:15px;
+}
+
+details{
+    background:white;
+    margin-bottom:15px;
+    border-radius:10px;
+    padding:15px;
+    box-shadow:0 3px 10px rgba(0,0,0,0.1);
+}
+
+summary{
+    font-size:20px;
+    font-weight:bold;
+    cursor:pointer;
+    color:#5a321b;
+}
+
+.producto{
+    display:flex;
+    justify-content:space-between;
+    padding:12px 10px;
+    border-bottom:1px solid #eee;
+    cursor:pointer;
+    border-radius:5px;
+    margin-bottom:5px;
+    transition:0.2s;
+    background:#fff8f0;
+}
+
+.producto:hover{
+    background:#f1e7df;
+    box-shadow:0 2px 6px rgba(0,0,0,0.1);
+}
+
+.producto span{
+    font-weight:bold;
+}
+
+.subtitulo{
+    font-weight:bold;
+    margin-top:10px;
+}
+
+.aviso{
+    color:red;
+    font-size:14px;
+    margin-top:10px;
+}
+
+#formulario{
+    display:none;
+    background:white;
+    padding:20px;
+    margin-top:30px;
+    border-radius:10px;
+    box-shadow:0 3px 10px rgba(0,0,0,0.1);
+}
+
+input{
+    width:100%;
+    padding:10px;
+    margin:8px 0;
+    border-radius:5px;
+    border:1px solid #ccc;
+}
+
+button{
+    background:#6b3e26;
+    color:white;
+    border:none;
+    padding:12px;
+    width:100%;
+    font-size:16px;
+    border-radius:6px;
+    cursor:pointer;
+    margin-top:10px;
+}
+
+button:hover{
+    background:#8b5a3c;
+}
+
+#error{
+    color:red;
+    font-weight:bold;
+    margin-top:10px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Arepas del Café</h1>
+<p>Menú completo para tus pedidos a domicilio</p>
+</header>
+
+<nav>
+<a href="index.html">Inicio</a>
+<a href="index.html#caracteristicas">Características</a>
+<a href="servicios.html" class="active">Menú</a>
+<a href="https://wa.me/573152391819">Contacto</a>
+</nav>
+
+<div class="container">
+
+<h2>Menú completo</h2>
+
+<!-- Hamburguesas -->
+<details>
+<summary>Hamburguesas</summary>
+<div class="producto" onclick="seleccionar('Hamburguesa de carne','9.200')"><span>Hamburguesa de carne</span><span>9.200</span></div>
+<div class="producto" onclick="seleccionar('Hamburguearepa de carne','9.500')"><span>Hamburguearepa de carne</span><span>9.500</span></div>
+<div class="producto" onclick="seleccionar('Hamburguesa doble de carne','15.000')"><span>Hamburguesa doble de carne</span><span>15.000</span></div>
+<div class="producto" onclick="seleccionar('Hamburguesa con tocineta','14.500')"><span>Hamburguesa con tocineta</span><span>14.500</span></div>
+<div class="producto" onclick="seleccionar('Hamburguesa de pollo','10.300')"><span>Hamburguesa de pollo</span><span>10.300</span></div>
+<div class="producto" onclick="seleccionar('Hamburguearepa de pollo','10.500')"><span>Hamburguearepa de pollo</span><span>10.500</span></div>
+<div class="producto" onclick="seleccionar('Hamburguesa de pollo en patacón','15.500')"><span>Hamburguesa de pollo en patacón</span><span>15.500</span></div>
+<div class="producto" onclick="seleccionar('Hamburguesa de pollo con tocineta','16.000')"><span>Hamburguesa de pollo con tocineta</span><span>16.000</span></div>
+<div class="producto" onclick="seleccionar('Hamburguesa mixta','16.000')"><span>Hamburguesa mixta</span><span>16.000</span></div>
+</details>
+
+<!-- Perros -->
+<details>
+<summary>Perros</summary>
+<div class="producto" onclick="seleccionar('Sencillo','8.000')"><span>Sencillo</span><span>8.000</span></div>
+<div class="producto" onclick="seleccionar('Americano','8.500')"><span>Americano</span><span>8.500</span></div>
+<div class="producto" onclick="seleccionar('Con adición','11.000')"><span>Con adición</span><span>11.000</span></div>
+<div class="producto" onclick="seleccionar('Especial','13.000')"><span>Especial</span><span>13.000</span></div>
+<div class="producto" onclick="seleccionar('Con 3 adiciones','14.000')"><span>Con 3 adiciones</span><span>14.000</span></div>
+<div class="producto" onclick="seleccionar('Choriperro sencillo','6.500')"><span>Choriperro sencillo</span><span>6.500</span></div>
+<div class="producto" onclick="seleccionar('Choriperro especial','7.500')"><span>Choriperro especial</span><span>7.500</span></div>
+<p class="aviso">
+Todos los perros incluyen queso, cebolla, papas trituradas, salsa a gusto y un huevito de codorniz.<br>
+Los adicionales son carne, pollo y champiñones.
+</p>
+</details>
+
+<!-- Salchipapas -->
+<details>
+<summary>Salchipapas</summary>
+<div class="producto" onclick="seleccionar('Normal','6.500')"><span>Normal</span><span>6.500</span></div>
+<div class="producto" onclick="seleccionar('Especial (+jamón, queso, huevos)','9.000')"><span>Especial (+jamón, queso, huevos)</span><span>9.000</span></div>
+<div class="producto" onclick="seleccionar('Super especial (+carne, pollo, jamón, queso, huevos)','13.000')"><span>Super especial (+carne, pollo, jamón, queso, huevos)</span><span>13.000</span></div>
+</details>
+
+<!-- Arepas -->
+<details>
+<summary>Arepas</summary>
+<div class="producto" onclick="seleccionar('Arepa con queso sencilla','3.000')"><span>Con queso sencilla</span><span>3.000</span></div>
+<div class="producto" onclick="seleccionar('Arepa doble queso','3.800')"><span>Doble queso</span><span>3.800</span></div>
+<div class="producto" onclick="seleccionar('Arepa con chorizo','5.300')"><span>Con chorizo</span><span>5.300</span></div>
+
+<p class="subtitulo">Sencillas</p>
+<div class="producto" onclick="seleccionar('Carne queso','5.500')"><span>Carne queso</span><span>5.500</span></div>
+<div class="producto" onclick="seleccionar('Pollo queso','5.500')"><span>Pollo queso</span><span>5.500</span></div>
+<div class="producto" onclick="seleccionar('Champiñón queso','5.500')"><span>Champiñón queso</span><span>5.500</span></div>
+<div class="producto" onclick="seleccionar('Jamón queso','5.500')"><span>Jamón queso</span><span>5.500</span></div>
+
+<p class="subtitulo">Mixtas</p>
+<div class="producto" onclick="seleccionar('Carne pollo queso huevo codorniz','6.500')"><span>Carne, pollo, queso y huevo codorniz</span><span>6.500</span></div>
+<div class="producto" onclick="seleccionar('Pollo champiñón queso huevo codorniz','6.500')"><span>Pollo, champiñón, queso y huevo codorniz</span><span>6.500</span></div>
+<div class="producto" onclick="seleccionar('Carne champiñón queso huevo codorniz','6.500')"><span>Carne, champiñón, queso y huevo codorniz</span><span>6.500</span></div>
+
+<p class="subtitulo">Super</p>
+<div class="producto" onclick="seleccionar('Carne pollo champiñón queso huevo codorniz','7.000')"><span>Carne, pollo, champiñón, queso y huevo codorniz</span><span>7.000</span></div>
+</details>
+
+<!-- Combos -->
+<details>
+<summary>Combos</summary>
+<p><b>Producto + porción de papa a la francesa + gaseosa 237ml</b></p>
+<div class="producto" onclick="seleccionar('Combo hamburguesa carne','15.500')"><span>Hamburguesa de carne</span><span>15.500</span></div>
+<div class="producto" onclick="seleccionar('Combo hamburguesa pollo','16.500')"><span>Hamburguesa de pollo</span><span>16.500</span></div>
+<div class="producto" onclick="seleccionar('Combo perro americano','15.000')"><span>Perro americano</span><span>15.000</span></div>
+<div class="producto" onclick="seleccionar('Combo perro sencillo','14.500')"><span>Perro sencillo</span><span>14.500</span></div>
+</details>
+
+<!-- Formulario -->
+<div id="formulario">
+<h3>Datos para el domicilio</h3>
+<p id="error" style="display:none">Esta información es obligatoria</p>
+<input id="nombre" placeholder="Tu nombre">
+<input id="ubicacion" placeholder="Ubicación / Dirección">
+<input id="pago" placeholder="¿Con cuánto pagas?">
+<button onclick="enviar()">Pedir por WhatsApp</button>
+</div>
+
+</div>
+
+<script>
+let productoSeleccionado="";
+let precioSeleccionado="";
+function seleccionar(producto, precio){
+    productoSeleccionado = producto;
+    precioSeleccionado = precio;
+    document.getElementById("formulario").style.display="block";
+    document.getElementById("error").style.display="none";
+    window.scrollTo({top:document.getElementById("formulario").offsetTop, behavior:'smooth'});
+}
+
+function enviar(){
+    let nombre=document.getElementById("nombre").value.trim();
+    let ubicacion=document.getElementById("ubicacion").value.trim();
+    let pago=document.getElementById("pago").value.trim();
+    if(!nombre || !ubicacion || !pago){
+        document.getElementById("error").style.display="block";
+        return;
+    }
+    let mensaje=`Pedido Arepas del Café%0AProducto: ${productoSeleccionado} - ${precioSeleccionado}%0ANombre: ${nombre}%0AUbicación: ${ubicacion}%0APaga con: ${pago}`;
+    window.open(`https://wa.me/573152391819?text=${mensaje}`);
+}
+</script>
+
+</body>
+</html>
